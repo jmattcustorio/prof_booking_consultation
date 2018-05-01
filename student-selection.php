@@ -25,6 +25,7 @@
 		<![endif]-->
 		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="assets/css/new-styles.min.css" />
 
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
@@ -46,21 +47,11 @@
 	<body class="no-skin">
 		<div id="navbar" class="navbar navbar-default ace-save-state">
 			<div class="navbar-container ace-save-state" id="navbar-container">
-				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-					<span class="sr-only">Toggle sidebar</span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-				</button>
-
 				<div class="navbar-header pull-left">
-					<a href="index.php" class="navbar-brand">
+					<a href="index.html" class="navbar-brand">
 						<small>
 							<i class="fa fa-user"></i>
-							Professor Dashboard	
+							Student Dashboard	
 						</small>
 					</a>
 				</div>
@@ -108,87 +99,6 @@
 				try{ace.settings.loadState('main-container')}catch(e){}
 			</script>
 
-			<div id="sidebar" class="sidebar responsive ace-save-state">
-				<script type="text/javascript">
-					try{ace.settings.loadState('sidebar')}catch(e){}
-				</script>
-
-				<!-- ICONS -->
-				<div class="sidebar-shortcuts hidden" id="sidebar-shortcuts">
-					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-						<button class="btn btn-success">
-							<i class="ace-icon fa fa-signal"></i>
-						</button>
-
-						<button class="btn btn-info">
-							<i class="ace-icon fa fa-pencil"></i>
-						</button>
-
-						<button class="btn btn-warning">
-							<i class="ace-icon fa fa-users"></i>
-						</button>
-
-						<button class="btn btn-danger">
-							<i class="ace-icon fa fa-cogs"></i>
-						</button>
-					</div>
-
-					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-						<span class="btn btn-success"></span>
-
-						<span class="btn btn-info"></span>
-
-						<span class="btn btn-warning"></span>
-
-						<span class="btn btn-danger"></span>
-					</div>
-				</div><!-- /.sidebar-shortcuts -->
-					<!-- END ICONS -->
-
-				
-
-				<ul class="nav nav-list">
-					<li class="active">
-						<a href="index.html">
-							<i class="menu-icon fa fa-tachometer"></i>
-							<span class="menu-text"> Overview </span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="calendar.php">
-							<i class="menu-icon fa fa-calendar"></i>
-
-							<span class="menu-text">
-								Open Subjects
-							</span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="calendar.php">
-							<i class="menu-icon fa fa-calendar"></i>
-
-							<span class="menu-text">
-								My Subjects
-							</span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					
-				</ul><!-- /.nav-list -->
-
-				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-				</div>
-			</div>
-
 			<div class="main-content">
 				<div class="main-content-inner">
 					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -211,13 +121,12 @@
 					</div>
 
 					<div class="page-content">
-
 						<div class="page-header">
 							<h1>
 								Dashboard
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
-									overview &amp; stats
+									Subject selection
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -242,34 +151,69 @@
 								<div class="row">
 									<div class="space-6"></div>
 
-									<div class="col-sm-7 infobox-container">
+									<div class="col-sm-7 infobox-container"><!-- SUBJECT CONTAINTER -->
 										<div class="infobox infobox-green">
-											<div class="infobox-icon">
-												<i class="ace-icon fa fa-save"></i>
+											<div class="infobox-data">
+												<!-- <span class="infobox-data-number">4 Groups</span> -->
+												<button type="button" class="btn btn-primary">(SAD)</button>
 											</div>
 
+										</div>
+
+										<div class="infobox infobox-blue">
 											<div class="infobox-data">
-												<span class="infobox-data-number">4 Groups</span>
-												<div class="infobox-content">Reserved</div>
+												<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+												Capstone
+												<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu">
+											      <li><a href="#">Capstone - 1</a></li>
+											      <li><a href="#">Capstone - 2</a></li>
+											    </ul>
+
+											    <!-- <select class="btn-primary">
+											    	<option value="Capstone-1">Capstone - 1</option>
+											    	<option value="Capstone-2">Capstone - 2</option>
+											    </select> -->
 											</div>
 										</div>
 
 										<div class="infobox infobox-blue">
-											<div class="infobox-icon">
-												<i class="ace-icon fa fa-book"></i>
-											</div>
-
 											<div class="infobox-data">
-												<span class="infobox-data-number">2 Open</span>
-												<div class="infobox-content">Subjects</div>
+												<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+												Others
+												<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu">
+											      <li><a href="#">CS120</a></li>
+											      <li><a href="#">VB</a></li>
+											      <li><a href="#">Multimedia</a></li>
+											    </ul>
+											</div>
+										</div>
+
+									<div class="space-6"></div>
+									</div><!-- END SUBJECT CONTAINTER -->
+
+									<div class="col-sm-7 infobox-container"><!-- SUBJECT SELECTED -->
+										<div class="infobox infobox-blue">
+											<div class="infobox-data">
+												<!-- <span class="infobox-data-number">4 Groups</span> -->
+												<div class="infobox-content"><center>(Subject Selected)</center></div>
 											</div>
 
 										</div>
 
-										<div class="space-6"></div>
-									
-									</div>
+									</div><!-- END SUBJECT SELECTED -->
 
+									<div class="col-sm-7 infobox-container"><!-- SUBJECT SELECTED -->
+										<div class="infobox-revise ">
+												<button type="button" class="btn btn-primary btn-lg" style="margin-top:20px">Select</button>
+										</div>
+										
+									</div><!-- END SUBJECT SELECTED -->
+
+									
 									<div class="vspace-12-sm"></div>
 
 									
@@ -336,6 +280,5 @@
 		<!-- ace scripts -->
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
-
 	</body>
 </html>
