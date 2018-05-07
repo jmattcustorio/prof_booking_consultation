@@ -265,7 +265,7 @@
 											<div class="widget-header">
 												<h4>Group reserved</h4>
 											</div>
-											<div class="col-xs-12 col-sm-8 widget-container-col" id="widget-container-col-2" style="margin-top: 10px;">
+											<div class="col-xs-12 col-sm-10 widget-container-col" id="widget-container-col-2" style="margin-top: 10px;">
 												<div class="widget-box widget-color-blue" id="widget-box-2">
 													<div class="widget-body">
 														<div class="widget-main no-padding">
@@ -304,7 +304,7 @@
 											</div>
 										</div><!--End Group reserved -->
 									</div> <!-- END SIDEBAR -->									
-									<button type="button" class="btn btn-primary" style="margin-top: 40px; left: 5%;">Reserve slot</button>
+									<!-- <button type="button" class="btn btn-primary" style="margin-top: 40px; left: 5%;">Reserve slot</button> -->
 								</div>
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
@@ -476,7 +476,8 @@
 		selectable: true,
 		selectHelper: true,
 		select: function(start, end, allDay) {
-			
+
+			// DIRIA ANG CALENDAR MODAL SCRIPT
 			bootbox.prompt("New Event Title:", function(title) {
 				if (title !== null) {
 					calendar.fullCalendar('renderEvent',
@@ -490,8 +491,7 @@
 						true // make the event "stick"
 					);
 				}
-			});
-			
+			});		
 
 			calendar.fullCalendar('unselect');
 		}
