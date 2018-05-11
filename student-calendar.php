@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head> 
+	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title><?php echo 'Professor Dashboard';?></title>
+		<title><?php echo 'Student Dashboard';?></title>
 
 		<meta name="description" content="with draggable and editable events" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -64,7 +64,7 @@
 					<a href="index.php" class="navbar-brand">
 						<small>
 							<i class="fa fa-user"></i>
-							Professor Dashboard
+							Student Dashboard
 						</small>
 					</a>
 				</div>
@@ -157,21 +157,19 @@
 
 				<ul class="nav nav-list">
 					<li class="">
-						<a href="index.php">
-							<i class="menu-icon fa fa-tachometer"></i>
-							<span class="menu-text"> Overview </span>
+						<a href="">
+							<i class="menu-icon fa fa-user"></i>
+							<span class="menu-text"> <b>Professors</b> </span>
 						</a>
 
 						<b class="arrow"></b>
 					</li>
 
+					<!-- PROFESSOR's LIST COUNT LOOP -->
 					<li class="active">
-						<a href="calendar.php">
-							<i class="menu-icon fa fa-calendar"></i>
-
+						<a href="">
 							<span class="menu-text">
-								Open Subjects
-
+								M.J Aborde
 								<span class="badge badge-transparent tooltip-error" title="2 Important Events">
 									
 								</span>
@@ -181,20 +179,36 @@
 						<b class="arrow"></b>
 					</li>
 
+					<!--  -->
 					<li class="">
-						<a href="calendar.php">
-							<i class="menu-icon fa fa-calendar"></i>
+						<a href="#" class="dropdown-toggle">
+							
+							<span class="menu-text"> E.L Pajota </span>
 
-							<span class="menu-text">
-								My Subjects
-
-								<span class="badge badge-transparent tooltip-error" title="2 Important Events">
-
-								</span>
-							</span>
+							<b class="arrow fa fa-angle-down"></b>
 						</a>
 
 						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									System Analysis and Design (SAD)
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Capstone - 1
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
 					</li>
 
 				</ul><!-- /.nav-list -->
