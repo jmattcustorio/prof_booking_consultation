@@ -15,65 +15,26 @@ body{
 	width: 1200px;
 	background: yellow;
 }
-ul{
-	margin:0;
-	padding:0;
-	list-style:none;
-	display: block;
-}
-li{
-	margin:0;
-	padding:0;
-	display: block;
-}
-# a:link, a:visited{
-	margin-left: 0 auto;
-	margin-right: 5px;
-	text-decoration: none;
-	text-align: center;
-	display: block;
-	color: white;
-	height: 48px;
-	width: 100px;
-	font-size: 25px;
-	border: 2px solid gold;
-	border-radius: 25px;
-	line-height: 50px;
-	float: left;
-}
-# a:hover{
-	color: black;
-	background: yellow;
-}
 #logo{
 	height: 150px;
 	width: 150px;
 	background: url("../images/CCE_logo.png")no-repeat center;
 }
-#content{
-	border: 1px solid red;
-	height: 100px;
-	color: white;
-	font-size: 30px;
-	text-align: center;
-}
-#button{
-	height: 100px;
-	border: 1px solid green;;
-	color: white;
-}
 #maincontent{
 	margin-top: 100px;
 	width: 850px;
+	border: 1px solid green;
 }
 #mc1{
 	color: white;
 	font-size: 30px;
 }
-#mc2{
+/* FIRST NAME */
+#mc2{    
 	float: left;
-	margin-top: 40px;
+	margin-top: 10px;
 	width: 420px;
+	border: 1px solid green;
 }
 #mc3{
 	width: 100px;
@@ -102,10 +63,12 @@ li{
 	color: red;
 	text-align: left;
 }
+/* LASTNAME */
 #mc6{
-	margin-top: 40px;
+	margin-top: 10px;
 	float: right;
 	width: 420px;
+	border: 1px solid green;
 }
 #mc7{ 
 	width: 100px;
@@ -134,10 +97,12 @@ li{
 	color: red;
 	text-align: left;
 }
+/* ID NUMBER */
 #mc10{
 	float: left;
 	margin-top: 27px;
 	width: 420px;
+	border: 1px solid green;
 }
 #mc11{
 	width: 100px;
@@ -166,10 +131,12 @@ li{
 	color: red;
 	text-align: left;
 }
+/* EMAIL */
 #mc14{
 	margin-top: 27px;
 	float: right;
 	width: 420px;
+	border: 1px solid green;
 }
 #mc15{  
 	width: 100px;
@@ -198,10 +165,12 @@ li{
 	color: red;
 	text-align: left;
 }
+/* PASSWORD */
 #mc18{
-	float: left;
 	margin-top: 25px;
+	float: left;
 	width: 420px;
+	border: 1px solid green;
 }
 #mc19{   
 	width: 100px;
@@ -230,10 +199,12 @@ li{
 	color: red;
 	text-align: left;
 }
+/* CONFIRM PASSWORD */
 #mc22{
 	margin-top: 25px;
 	float: right;
 	width: 420px;
+	border: 1px solid green;
 }
 #mc23{  
 	width: 100px;
@@ -262,30 +233,66 @@ li{
 	color: red;
 	text-align: left;
 }
+/* CELL NUMBER */
 #mc26{
+	margin-top: 25px;
+	//float: left;
+	width: 420px;
+	border: 1px solid red;
+}
+#mc27{  
+	width: 100px;
+	float: left;
+	color: white;
+	font-size: 20px;
+	text-align: left;
+	margin-top: 5px;
+	border: 1px solid red;
+}
+#mc28{
+	color: white;
+	width: 300px;
+	border: 1px solid green;
+}
+#mc28 input{
+	margin-top: 5px;
+	width: 300px;
+	height: 25px;
+	font-size: 20px;
+}
+#mc29{
+	margin-top: 5px;
+	margin-left: 103px;
+	height: 20px;
+	width: 300px;
+	font-size: 15px;
+	color: red;
+	text-align: left;
+}
+#mc30{
 	width: 450px;
 	color: white;
 	font-size: 20px;
 	margin-top: 315px;
 	padding-bottom: 20px;
 }
-#mc27{
+#mc31{
 	margin-top: 20px;
 	margin-left: -200px;
 	width: 150px;
 	height: 30px;
 }
-#mc27 button{
+#mc31 button{
 	width: 150px;
 	height: 30px;
 }
-#mc28{
+#mc32{
 	margin-top: -30px;
 	margin-left: 200px;
 	width: 150px;
 	height: 30px;
 }
-#mc28 button{
+#mc32 button{
 	width: 150px;
 	height: 30px;
 }

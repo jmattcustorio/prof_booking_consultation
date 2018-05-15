@@ -14,15 +14,15 @@
 				</div>
 						
 			<div id="maincontent"> 
-				<div id="mc1"> Sign Up as Student</div>
-					<form action="student.php" method="post">
-						<?php include ('stud_validation.php');
+				<div id="mc1"> Register an Account </div>
+					<form action="home.php" method="post">
+						<?php include ('validation.php');
 						if ($valid != true){?>	
 						<?php
 						}?>
 						<div id="mc2" class = "input-group">
 						<div id="mc3">First Name: </div>
-						<div id="mc4"><input type="text" name="fname" value = "<?php echo $fname?>"></div>
+						<div id="mc4"><input type= "text" name = "fname" value = "<?php echo $fname?>"></div>
 						<div id="mc5"><?php echo $stud_fnameErr ?></div>
 						</div>
 						
@@ -50,25 +50,24 @@
 						<div id="mc21"><?php echo $stud_passwordErr ?></div>
 						</div>
 						
-						<div id="mc18" class = "input-group">
-						<div id="mc19">Confirm Password: </div>
-						<div id="mc20"><input type="password" name="password_2" value = "<?php echo $password_2?>"></div>
-						<div id="mc21"><?php echo $confirmpassErr?></div>
-						</div>
-						
 						<div id="mc22" class = "input-group">
-						<div id="mc23">Cell No.: </div>
-						<div id="mc24"><input type="number" name="contactno" value = "<?php echo $contactno?>"></div>
-						<div id="mc25"><?php echo $stud_contactnoErr ?></div>
+						<div id="mc23">Confirm Password: </div>
+						<div id="mc24"><input type="password" name="password_2" value = "<?php echo $password_2?>"></div>
+						<div id="mc25"><?php echo $confirmpassErr?></div>
 						</div>
 						
-			</div>
-						
-						<div id="mc26" class = "input-group">Already a member? <i><a href="">Sign in</a></i>
-						<div id="mc27"><button type="submit" name="register">Register</button></div>
-						<div id="mc28"><button type="reset" name="reset">Reset</button></div>
+						<div id="mc26" class = "input-group">
+						<div id="mc27">Cell No.: </div>
+						<div id="mc28"><input type="number" name="contactno" value = "<?php echo $contactno?>"></div>
+						<div id="mc29"><?php echo $stud_contactnoErr ?></div>
+						</div>
+												
+						<div id="mc30" class = "input-group">Already a member? <i><a href="">Sign in</a></i>
+						<div id="mc31"><button type="submit" name="register">Register</button></div>
+						<div id="mc32"><button type="reset" name="reset">Reset</button></div>
 						</div>
 					</form>
+			</div>
 			</div>
 		</div>
 	</body></center>

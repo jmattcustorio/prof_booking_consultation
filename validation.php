@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$valid = false; 
   } 
   else {		
-	$stud_fname = test_input(toupper($_POST['fname'])); 
+	$fname = test_input(toupper($_POST['fname'])); 
 	}
 //check Lastname
    if (empty($_POST['lname'])) {
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$valid = false; 
   } 
   else {		
-	$stud_lname = test_input(toupper($_POST['lname'])); 
+	$lname = test_input(toupper($_POST['lname'])); 
 	}
 	
 	
