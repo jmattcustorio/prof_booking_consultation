@@ -1,341 +1,366 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta charset="utf-8" />
-		<title>Professor Dasboard</title>
+<?php session_start();?>
+<!doctype html>
 
-		<meta name="description" content="overview &amp; stats" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
-		<!-- bootstrap & fontawesome -->
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
-
-		<!-- page specific plugin styles -->
-
-		<!-- text fonts -->
-		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
-
-		<!-- ace styles -->
-		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
-
-		<!--[if lte IE 9]>
-			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
-		<![endif]-->
-		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-
-		<!--[if lte IE 9]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
-
-		<!-- inline styles related to this page -->
-		
-		<!-- ace settings handler -->
-		<script src="assets/js/ace-extra.min.js"></script>
-
-		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
-
-		<!--[if lte IE 8]>
-		<script src="assets/js/html5shiv.min.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
-	</head>
-
-	<body class="no-skin">
-		<div id="navbar" class="navbar navbar-default ace-save-state">
-			<div class="navbar-container ace-save-state" id="navbar-container">
-				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-					<span class="sr-only">Toggle sidebar</span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-
-					<span class="icon-bar"></span>
-				</button>
-
-				<div class="navbar-header pull-left">
-					<a href="index.php" class="navbar-brand">
-						<small>
-							<i class="fa fa-user"></i>
-							Professor Dashboard	
-						</small>
-					</a>
+<html>
+	<header>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>CCE - PBC</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/home.css" />
+	</header>
+		<center><body>
+			<div id="bodyWrap">
+				<div id="headbtn"> 
+					<div id="logo"></div>
 				</div>
+				<div id="buttons">
+					<div id="title"> Professors' Booking Consultation </div>
+						<?php
+					if(isset($_SESSION['username'])){
+						?>
+						<div id="welcome">Welcome <?php echo strtoupper($_SESSION['username'])?></div>
+						<?php
+					}
+					else{
+						?>
+						<div id="home"> &nbsp; </div>
+						<div id="dashboard"><a href=""> Select Subject </a></div>						
+						<?php
+					}
+				?>
+				<?php
+					if(isset($_SESSION['username'])){
+						?>
+						<div id="dboard"><a href="calendar.php"> Calendar </a></div>
+						<div id="dashboard"><a href=""> Select Subject </a></div>
+						<?php
+					}
+				?>				
+				<?php
+					if(isset($_SESSION['username'])){
+						?>
+						<div id="logout"><a href="logout.php">Log Out</a></div>
+						<?php
+					}
+					else{
+						?>					
+						<meta name="viewport_signup" content="width=device-width, initial-scale=1">
+								<style>
 
-				<div class="navbar-buttons navbar-header pull-right" role="navigation">
-					<ul class="nav ace-nav">
+								/* The Modal (background) */
+								.modal_signup {
+									display: none;
+									position: fixed;
+									z-index: 1;
+									padding-top: 100px;
+									left: 0;
+									top: 0;
+									width: 100%;
+									height: 100%;
+									overflow: auto;
+									background-color: rgb(0,0,0);
+									background-color: rgba(0,0,0,0.4);
+								}
 
-						<li class="light-blue dropdown-modal">
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<!-- <img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" /> -->
-								<i class="ace-icon fa fa-user"></i>
-								<span class="user-info">
-									<small>Welcome,</small>
-									User
-								</span>
+								/* Modal Content */
+								.signup-content {
+									position: relative;
+									background-color: black;
+									margin: auto;
+									padding: 0;
+									border: 1px solid #888;
+									width: 50%;
+									height: 50%;
+									box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+									-webkit-animation-name: animatetop;
+									-webkit-animation-duration: 0.4s;
+									animation-name: animatetop;
+									animation-duration: 0.4s
+								}
 
-								<i class="ace-icon fa fa-caret-down"></i>
-							</a>
+								/* Add Animation */
+								@-webkit-keyframes animatetop {
+									from {top:-300px; opacity:0} 
+									to {top:0; opacity:1}
+								}
 
-							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="profile.html">
-										<i class="ace-icon fa fa-user"></i>
-										Profile
-									</a>
-								</li>
+								@keyframes animatetop {
+									from {top:-300px; opacity:0}
+									to {top:0; opacity:1}
+								}
 
-								<li class="divider"></li>
+								/* The Close Button */
+								.signupclose {
+									color: white;
+									float: right;
+									font-size: 28px;
+									font-weight: bold;
+								}
 
-								<li>
-									<a href="#">
-										<i class="ace-icon fa fa-power-off"></i>
-										Logout
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div><!-- /.navbar-container -->
-		</div>
+								.signupclose:hover,
+								.signupclose:focus {
+									color: #000;
+									text-decoration: none;
+									cursor: pointer;
+								}
 
-		<div class="main-container ace-save-state" id="main-container">
-			<script type="text/javascript">
-				try{ace.settings.loadState('main-container')}catch(e){}
-			</script>
+								.signup-header {
+									padding: 2px 16px;
+									background-color: gold;
+									color: black;
+								}
 
-			<div id="sidebar" class="sidebar responsive ace-save-state">
-				<script type="text/javascript">
-					try{ace.settings.loadState('sidebar')}catch(e){}
-				</script>
+								.signup-body {padding: 2px 16px;}
 
-				<!-- ICONS -->
-				<div class="sidebar-shortcuts hidden" id="sidebar-shortcuts">
-					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-						<button class="btn btn-success">
-							<i class="ace-icon fa fa-signal"></i>
-						</button>
+								.btn_signup{
+									color: white;
+									margin-top: 10px;
+									font-size: 25px;
+									width: 300px;
+									height: 50px;
+									border: 2px solid gold;
+									background-color: black;
+									display: block;
+								}
+								.btn_signup:hover{
+									background-color: yellow;
+									color: black;
+								}
+								.btn_professor{
+									color: white;
+									margin-top: 80px;
+									margin-bottom: 10px;
+									font-size: 25px;
+									width: 250px;
+									height: 100px;
+									border: 2px solid gold;
+									background-color: yellow;
+								}
+								.btn_professor:hover{
+									background-color: black;
+									color: white;
+								}
+								.btn_student{
+									color: black;
+									margin-top: 10px;
+									margin-bottom: 10px;
+									font-size: 25px;
+									width: 250px;
+									height: 100px;
+									border: 2px solid gold;
+									background-color: yellow;
+								}
+								.btn_student:hover{
+									background-color: black;
+									color: white;
+								}	
+								</style>
+								</head>
+								<body>
 
-						<button class="btn btn-info">
-							<i class="ace-icon fa fa-pencil"></i>
-						</button>
+								<!-- Trigger/Open The Modal -->
+								<button id="signup" class="btn_signup">Sign Up</button>
 
-						<button class="btn btn-warning">
-							<i class="ace-icon fa fa-users"></i>
-						</button>
+								<!-- The Modal -->
+								<div id="signup_modal" class="modal_signup">
 
-						<button class="btn btn-danger">
-							<i class="ace-icon fa fa-cogs"></i>
-						</button>
-					</div>
-
-					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-						<span class="btn btn-success"></span>
-
-						<span class="btn btn-info"></span>
-
-						<span class="btn btn-warning"></span>
-
-						<span class="btn btn-danger"></span>
-					</div>
-				</div><!-- /.sidebar-shortcuts -->
-					<!-- END ICONS -->
-
-				
-
-				<ul class="nav nav-list">
-					<li class="active">
-						<a href="index.php">
-							<i class="menu-icon fa fa-tachometer"></i>
-							<span class="menu-text"> Overview </span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="calendar.php">
-							<i class="menu-icon fa fa-calendar"></i>
-
-							<span class="menu-text">
-								Open Subjects
-							</span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="calendar.php">
-							<i class="menu-icon fa fa-calendar"></i>
-
-							<span class="menu-text">
-								My Subjects
-							</span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					
-				</ul><!-- /.nav-list -->
-
-				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-				</div>
-			</div>
-
-			<div class="main-content">
-				<div class="main-content-inner">
-					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
-						<ul class="breadcrumb">
-							<li>
-								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">Home</a>
-							</li>
-							<li class="active">Dashboard</li>
-						</ul><!-- /.breadcrumb -->
-
-						<div class="nav-search" id="nav-search">
-							<form class="form-search">
-								<span class="input-icon">
-									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-									<i class="ace-icon fa fa-search nav-search-icon"></i>
-								</span>
-							</form>
-						</div><!-- /.nav-search -->
-					</div>
-
-					<div class="page-content">
-
-						<div class="page-header">
-							<h1>
-								Dashboard
-								<small>
-									<i class="ace-icon fa fa-angle-double-right"></i>
-									overview &amp; stats
-								</small>
-							</h1>
-						</div><!-- /.page-header -->
-
-						<div class="row">
-							<div class="col-xs-12">
-								<!-- PAGE CONTENT BEGINS -->
-								<div class="alert alert-block alert-success">
-									<button type="button" class="close" data-dismiss="alert">
-										<i class="ace-icon fa fa-times"></i>
-									</button>
-
-									<i class="ace-icon fa fa-check green"></i>
-
-									Welcome to
-									<strong class="green">
-										Professor Booking Consultation
-										<small>(v1.1)</small>
-									</strong>, <a href="https://github.com/jmattcustorio/prof_booking_consultation.git">github</a>
+								  <!-- Modal content -->
+								  <div class="signup-content">
+								  
+									<div class="signup-header">
+									  <span class="signupclose">&times;</span>
+									  <h2>Create your Account</h2>
+									</div>
+									
+									<div class="signup-body">
+									  <button id="professor" class="btn_professor"><a href="professor.php">Professor</a></button>
+									  <button id="student" class="btn_student"><a href="student.php">Student</a></button>
+									</div>
+								  </div>
 								</div>
 
-								<div class="row">
-									<div class="space-6"></div>
+								<script>
+									var modal_signup = document.getElementById('signup_modal');
+									var btn_signup = document.getElementById("signup");
+									var span = document.getElementsByClassName("signupclose")[0];
+									btn_signup.onclick = function() {
+										modal_signup.style.display = "block";
+									}
+										span.onclick = function() {
+											modal_signup.style.display = "none";
+										}
+									window.onclick = function(event) {
+										if (event.target == modal_signup) {
+											modal_signup.style.display = "none";
+										}
+									}
+								</script>
+						<meta name="viewport_login" content="width=device-width, initial-scale=1">
+								<style>
 
-									<div class="col-sm-7 infobox-container">
-										<div class="infobox infobox-green">
-											<div class="infobox-icon">
-												<i class="ace-icon fa fa-save"></i>
-											</div>
+								/* The Modal (background) */
+								.modal_login {
+									display: none;
+									position: fixed;
+									z-index: 1;
+									padding-top: 30px;
+									left: 0;
+									top: 0;
+									width: 100%;
+									height: 100%;
+									overflow: auto;
+									background-color: rgb(0,0,0);
+									background-color: rgba(0,0,0,0.4);
+								}
 
-											<div class="infobox-data">
-												<span class="infobox-data-number">4 Groups</span>
-												<div class="infobox-content">Reserved</div>
-											</div>
-										</div>
+								/* Modal Content */
+								.login-content {
+									position: relative;
+									background-color: black;
+									margin: auto;
+									padding: 0;
+									border: 1px solid #888;
+									width: 50%;
+									box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+									-webkit-animation-name: animatetop;
+									-webkit-animation-duration: 0.4s;
+									animation-name: animatetop;
+									animation-duration: 0.4s
+								}
 
-										<div class="infobox infobox-blue">
-											<div class="infobox-icon">
-												<i class="ace-icon fa fa-book"></i>
-											</div>
+								/* Add Animation */
+								@-webkit-keyframes animatetop {
+									from {top:-300px; opacity:0} 
+									to {top:0; opacity:1}
+								}
 
-											<div class="infobox-data">
-												<span class="infobox-data-number">2 Open</span>
-												<div class="infobox-content">Subjects</div>
-											</div>
+								@keyframes animatetop {
+									from {top:-300px; opacity:0}
+									to {top:0; opacity:1}
+								}
 
-										</div>
+								/* The Close Button */
+								.loginclose {
+									color: white;
+									float: right;
+									font-size: 28px;
+									font-weight: bold;
+								}
 
-										<div class="space-6"></div>
-									
+								.loginclose:hover,
+								.loginclose:focus {
+									color: #000;
+									text-decoration: none;
+									cursor: pointer;
+								}
+
+								.login-header {
+									padding: 2px 16px;
+									background-color: gold;
+									color: black;
+								}
+
+								.login-body {padding: 2px 16px;}
+
+								.login-footer {
+									padding: 2px 16px;
+									background-color: gold;
+									color: black;
+								}
+								.btn_login{
+									color: white;
+									margin-top: 10px;
+									font-size: 25px;
+									width: 250px;
+									height: 50px;
+									border: 2px solid gold;
+									background-color: black;
+								}
+								.btn_login:hover{
+									background-color: yellow;
+									color: black;
+								}
+								</style>
+								</head>
+	<body>
+
+								<!-- Trigger/Open The Modal -->
+								<button id="login" class="btn_login">Log In</button>
+
+								<!-- The Modal -->
+								<div id="login_modal" class="modal_login">
+
+								  <!-- Modal content -->
+								  <div class="login-content">
+								  
+									<div class="login-header">
+									  <span class="loginclose">&times;</span>
+									  <h2>Log Into Your Account</h2>
 									</div>
-
-									<div class="vspace-12-sm"></div>
-
 									
-								</div><!-- /.row -->
+									<div class="login-body">
+									  <div id="content"><h2> College of Computing in Education </h2></div>
+						<div id="mc1"> Login to your Account </div>
+						
+						<form action="home.php" method="post">
+							<?php include ('authentication.php');
+								if ($valid != true){?>						
+							<?php
+							}?>
+						<div id="mc2">ID Number: </div>
+						<div id="mc3"><input type="number" name="school_id" required></div>
+						
+						<div id="mc5">Password:</div>
+						<div id="mc6"><input type="password" id="password" name="password" required></div>
+							<script>
+								var toggled = false;
+								function show(){
+								if(!toggled){
+									toggled = true;
+									document.getElementById("password").setAttribute('type','text');
+									return;
+								}
+								if(toggled){
+									toggled = false;
+									document.getElementById("password").setAttribute('type','password');
+									return;
+								}
+								}
+							</script>
+						<div id="mc8"><input type = "checkbox" name = "usertype" value = "admin">Log in as Professor</div>
+						<div id="mc9"><button type="submit" name="login">Log in</button></div>
+						<div id="mc10">Not Yet a member? Sign up <a href="signup.php"><i>Here</i></a></div>
+						</form>
+									</div>
+									
+									<div class="login-footer">
+									  <h3> &nbsp;</h3>
+									</div>
+								  </div>
+								</div>
 
-								<div class="hr hr32 hr-dotted"></div>
+								<script>
+									var modal_login = document.getElementById('login_modal');
+									var btn_login = document.getElementById("login");
+									var span = document.getElementsByClassName("loginclose")[0];
+									btn_login.onclick = function() {
+										modal_login.style.display = "block";
+									}
+										span.onclick = function() {
+											modal_login.style.display = "none";
+										}
+									window.onclick = function(event) {
+										if (event.target == modal_login) {
+											modal_login.style.display = "none";
+										}
+									}
+								</script>	
 
-								<div class="hr hr32 hr-dotted"></div>
-
-								<!-- PAGE CONTENT ENDS -->
-							</div><!-- /.col -->
-						</div><!-- /.row -->
-					</div><!-- /.page-content -->
-				</div>
-			</div><!-- /.main-content -->
-
-			<div class="footer">
-				<div class="footer-inner">
-					<div class="footer-content">
-						<span class="bigger-120">
-							<span class="blue bolder">Booking</span>
-							Application &copy; 2018
-						</span>
-
-						&nbsp; &nbsp;
-
-					</div>
-				</div>
+						<?php
+					}
+				?>
+				
 			</div>
-
-			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-			</a>
-		</div><!-- /.main-container -->
-
-		<!-- basic scripts -->
-
-		<!--[if !IE]> -->
-		<script src="assets/js/jquery-2.1.4.min.js"></script>
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
-		<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-		</script>
-		<script src="assets/js/bootstrap.min.js"></script>
-
-		<!-- page specific plugin scripts -->
-
-		<!--[if lte IE 8]>
-		  <script src="assets/js/excanvas.min.js"></script>
-		<![endif]-->
-		<script src="assets/js/jquery-ui.custom.min.js"></script>
-		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-		<script src="assets/js/jquery.easypiechart.min.js"></script>
-		<script src="assets/js/jquery.sparkline.index.min.js"></script>
-		<script src="assets/js/jquery.flot.min.js"></script>
-		<script src="assets/js/jquery.flot.pie.min.js"></script>
-		<script src="assets/js/jquery.flot.resize.min.js"></script>
-
-		<!-- ace scripts -->
-		<script src="assets/js/ace-elements.min.js"></script>
-		<script src="assets/js/ace.min.js"></script>
-
-	</body>
-</html>
+			</div>
+	</body></center>
+		<center><div id="footer"><strong>Develop by: Montederamos | Sato | Custorio | (c) 2018 . Professors' Booking Consultation | Ver. BETA 0.1</strong></div></center>
+	</html>
