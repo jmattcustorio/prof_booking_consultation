@@ -301,7 +301,7 @@
 									  <div id="content"><h2> College of Computing in Education </h2></div>
 						<div id="mc1"> Login to your Account </div>
 						
-						<form action="index.php" method="post">
+						<form action="home.php" method="post">
 							<?php include ('authentication.php');
 								if ($valid != true){?>						
 							<?php
