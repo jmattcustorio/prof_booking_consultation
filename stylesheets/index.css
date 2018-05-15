@@ -1,0 +1,259 @@
+body{
+	margin: 0 auto;
+	padding: 0;
+	background: url("../images/Trojans_logo.jpg")repeat center fixed;
+	-webkit-background-size: contain;
+}
+#bodyWrap{
+	width: 1200px;
+	background: black;
+	opacity: 0.90;
+    filter: alpha(opacity=90);
+}
+#headbtn{
+	height: 75px;
+	width: 1200px;
+	background: yellow;
+}
+ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+	display: block;
+}
+li{
+	margin:0;
+	padding:0;
+	display: block;
+}
+# a:link, a:visited{
+	margin-left: 0 auto;
+	margin-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: white;
+	height: 48px;
+	width: 100px;
+	font-size: 25px;
+	border: 2px solid gold;
+	border-radius: 25px;
+	line-height: 50px;
+	float: left;
+}
+#login a:link, a:visited{
+	margin-top: 10px;
+	//float:left;
+	//margin-right: 1000px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: white;
+	height: 50px;
+	width: 250px;
+	font-size: 25px;
+	border: 2px solid gold;
+	line-height: 50px;
+}
+#login a:hover{
+	color: black;
+	background: yellow;
+}
+#welcome{
+	margin-top: 10px;
+	height: 55px;
+	width: 400px;
+	text-align: center;
+	display: blocked;
+	font-size: 40px;
+	background-color: black;
+	color: white;
+}
+#logout a:link, a:visited{
+	margin-top: 10px;
+	//margin-right: 1000px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: white;
+	height: 50px;
+	width: 250px;
+	font-size: 25px;
+	border: 2px solid gold;
+	border-radius: 25px;
+	line-height: 50px;
+}
+#logout a:hover{
+	color: black;
+	background: yellow;
+}
+#dboard a:link, a:visited{
+	margin-top: 10px;
+	//margin-right: 1000px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: white;
+	height: 50px;
+	width: 400px;
+	font-size: 25px;
+	border: 2px solid gold;
+	border-radius: 25px;
+	line-height: 50px;
+}
+#dboard a:hover{
+	color: black;
+	background: yellow;
+}
+#admin a:link, a:visited{
+	margin-top: 10px;
+	height: 50px;
+	width: 300px;
+	text-align: center;
+	text-decoration: none;
+	display: blocked;
+	font-size: 200%;
+	background-color: black;
+	color: white;
+	border: 1px solid white;
+}
+#dashboard a:link, a:visited{
+	margin-top: 10px;
+	//margin-right: 1000px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: white;
+	height: 50px;
+	width: 350px;
+	font-size: 25px;
+	border: 2px solid gold;
+	line-height: 50px;
+}
+#dashboard a:hover{
+	color: black;
+	background: yellow;
+}
+#home a:link, a:visited{
+	margin-top: 10px;
+	//float: left;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: white;
+	height: 50px;
+	width: 400px;
+	font-size: 25px;
+	border: 2px solid gold;
+	border-radius: 25px;
+	line-height: 50px;
+}
+#home a:hover{
+	color: black;
+	background: yellow;
+}
+#content{
+	margin-top: 10px;
+	height: 70px;
+	width: 500px;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+}
+#mc1{
+	color: white;
+	font-size: 30px;
+}
+#mc2{
+	margin-top: 30px;
+	width: 300px;
+	text-align: left;
+	color: white;
+	font-size: 25px;
+}
+#mc3{
+	margin-top: 5px;
+	width: 400px;
+}
+#mc3 input{
+	width: 300px;
+	height: 30px;
+	font-size: 20px;
+	border-radius: 20px;
+}
+#mc4{
+	margin-top: 5px;
+	height: 20px;
+	width: 300px;
+	font-size: 20px;
+	color: red;
+	text-align: left;
+}
+#mc5{
+	margin-top: 5px;
+	width: 300px;
+	text-align: left;
+	color: white;
+	font-size: 25px;
+}
+#mc6{
+	margin-top: 5px;
+	width: 400px;
+}
+#mc6 input{
+	width: 300px;
+	height: 30px;
+	font-size: 20px;
+	border-radius: 20px;
+}
+#mc7{
+	margin-top: 5px;
+	height: 20px;
+	width: 300px;
+	font-size: 20px;
+	color: red;
+	text-align: left;
+}
+#mc8{
+	margin-top: 20px;
+	width: 400px;
+	font-size: 20px;
+	color: white;
+}
+#mc9{
+	margin-top: 10px;
+	width: 400px;
+}
+#mc9 button{
+	border-radius: 25px;
+	width: 150px;
+	height: 40px;
+	font-size: 20px;
+}
+#mc10{
+	margin-top: 20px;
+	padding-bottom: 20px;	
+	font-size: 150%;
+	color: white;
+}
+#logo{
+	height: 150px;
+	width: 150px;
+	background: url("../images/CCE_logo.png")no-repeat center;
+}
+#buttons{
+	padding-top: 140px;
+	height: 400px;
+	//border: 1px solid green;
+}
+#title{
+	font-size: 40px;
+	color: white;
+}
+#footer{
+	height: 35px;
+	padding-top: 10px;
+	font-size: 20px;
+	background: gray;
+	color: black;
+}

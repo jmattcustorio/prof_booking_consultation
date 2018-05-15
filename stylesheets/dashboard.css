@@ -1,0 +1,254 @@
+body{
+	margin: 0 auto;
+	padding: 0;
+	background: url("../images/Trojans_logo.jpg")repeat center fixed;
+	-webkit-background-size: contain;
+}
+#bodyWrap{
+	width: 1200px;
+	background: black;
+	opacity: 0.90;
+    filter: alpha(opacity=90);
+}
+#headbtn{
+	height: 75px;
+	width: 1200px;
+	background: yellow;
+	//position: fixed;
+	//border: 1px solid red;
+}
+ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+	display: block;
+}
+li{
+	margin:0;
+	padding:0;
+	display: block;
+}
+# a:link, a:visited{
+	margin-left: 0 auto;
+	margin-right: 5px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: white;
+	height: 48px;
+	width: 100px;
+	font-size: 25px;
+	border: 2px solid gold;
+	border-radius: 25px;
+	line-height: 50px;
+	float: left;
+}
+# a:hover{
+	color: black;
+	background: yellow;
+}
+#signup a:link, a:visited{
+	margin-top: -55px;
+	float: right;	
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: white;
+	height: 50px;
+	width: 250px;
+	font-size: 25px;
+	border: 2px solid gold;
+	border-radius: 25px;
+	line-height: 50px;
+}
+#signup a:hover{
+	color: black;
+	background: yellow;
+}
+#login a:link, a:visited{
+	margin-top: 10px;
+	float:right;
+	//margin-right: 400px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: white;
+	height: 50px;
+	width: 250px;
+	font-size: 25px;
+	border: 2px solid gold;
+	border-radius: 25px;
+	line-height: 50px;
+}
+#login a:hover{
+	color: black;
+	background: yellow;
+}
+#welcome{
+	margin-top: -50px;
+	margin-left: 79%;
+	height: 50%;
+	width: 20%;
+	text-align: left;
+	display: blocked;
+	font-size: 150%;
+	background-color: black;
+	color: white;
+}
+#logout a:link, a:visited{
+	margin-top: -5px;
+	margin-right: 1000px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: white;
+	height: 50px;
+	width: 250px;
+	font-size: 25px;
+	border: 2px solid gold;
+	border-radius: 25px;
+	line-height: 50px;
+}
+#logout a:hover{
+	color: black;
+	background: yellow;
+}
+#admin a:link, a:visited{
+	margin-top: 5px;
+	margin-left: 79%;
+	text-decoration: none;
+	text-align: left;
+	display: block;
+	color: white;
+	height: 50%;
+	width: 20%;
+	font-size: 25px;
+	line-height: 30px;
+}
+#logo{
+	height: 150px;
+	width: 150px;
+	background: url("../images/CCE_logo.png")no-repeat center;
+}
+#content{
+	height: 70px;
+	width: 500px;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+}
+#button{
+	margin-top: 10px;
+	margin-right: 1000px;
+	height: 50px;
+	width: 250px;
+	color: white;
+	border: 2px solid gold;
+	border-radius: 25px;
+}
+ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+	display: block;
+}
+li{
+	margin:0;
+	padding:0;
+	display: block;
+}
+#button a:link, a:visited{
+	text-decoration: none;
+	display: block;
+	color: white;
+	font-size: 150%;
+	line-height: 50px;
+	
+}
+a#home:hover{
+	border-radius: 25px;
+	background: yellow;
+	color: black;
+}
+#maincontent{
+	margin-top: 9px;
+	width: 500px;
+	//border: 1px solid green;
+}
+#mc1{
+	color: white;
+	font-size: 30px;
+}
+#mc2{
+	margin-top: 30px;
+	width: 300px;
+	text-align: left;
+	color: white;
+	font-size: 25px;
+}
+#mc3{
+	margin-top: 5px;
+	width: 400px;
+}
+#mc3 input{
+	width: 300px;
+	height: 30px;
+	font-size: 20px;
+	border-radius: 20px;
+}
+#mc4{
+	margin-top: 5px;
+	height: 20px;
+	width: 300px;
+	font-size: 20px;
+	color: red;
+	text-align: left;
+}
+#mc5{
+	margin-top: 5px;
+	width: 300px;
+	text-align: left;
+	color: white;
+	font-size: 25px;
+}
+#mc6{
+	margin-top: 5px;
+	width: 400px;
+}
+#mc6 input{
+	width: 300px;
+	height: 30px;
+	font-size: 20px;
+	border-radius: 20px;
+}
+#mc7{
+	margin-top: 5px;
+	height: 20px;
+	width: 300px;
+	font-size: 20px;
+	color: red;
+	text-align: left;
+}
+#mc9{
+	margin-top: 10px;
+	width: 400px;
+}
+#mc9 button{
+	border-radius: 25px;
+	width: 150px;
+	height: 40px;
+	font-size: 20px;
+}
+#mc10{
+	margin-top: 20px;
+	padding-bottom: 20px;	
+	font-size: 150%;
+	color: white;
+}
+#footer{
+	height: 35px;
+	padding-top: 10px;
+	font-size: 20px;
+	background: gray;
+	color: black;
+}
