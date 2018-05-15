@@ -15,9 +15,9 @@
 				<div id="buttons">
 					<div id="title"> Professors' Booking Consultation </div>
 						<?php
-					if(isset($_SESSION['username'])){
+					if(isset($_SESSION['fname'])){
 						?>
-						<div id="welcome">Welcome <?php echo strtoupper($_SESSION['username'])?></div>
+						<div id="welcome">Welcome <?php echo strtoupper($_SESSION['fname'])?></div>
 						<?php
 					}
 					else{
@@ -28,7 +28,7 @@
 					}
 				?>
 				<?php
-					if(isset($_SESSION['username'])){
+					if(isset($_SESSION['fname'])){
 						?>
 						<div id="dboard"><a href="calendar.php"> Calendar </a></div>
 						<div id="dashboard"><a href=""> Select Subject </a></div>
@@ -36,7 +36,7 @@
 					}
 				?>				
 				<?php
-					if(isset($_SESSION['username'])){
+					if(isset($_SESSION['fname'])){
 						?>
 						<div id="logout"><a href="logout.php">Log Out</a></div>
 						<?php
@@ -172,8 +172,16 @@
 									</div>
 									
 									<div class="signup-body">
-									  <button id="professor" class="btn_professor"><a href="professor.php">Professor</a></button>
-									  <button id="student" class="btn_student"><a href="student.php">Student</a></button>
+									  <button id="professor" class="btn_professor"><a href="signup.php">Professor</a>
+									  <?php
+										$_SESSION['usertype'] = "professor";
+									  ?>
+									  </button>
+									  <button id="student" class="btn_student"><a href="signup.php">Student</a>
+									  <?php
+										$_SESSION['usertype'] = "student";
+									  ?>
+									  </button>
 									</div>
 								  </div>
 								</div>
