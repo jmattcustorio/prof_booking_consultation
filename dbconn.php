@@ -6,6 +6,7 @@ $passcode = "";
 $dbname = "booking_consultation"; 
    
 try {     
+
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $user_name, $passcode); 
       
 // set the PDO error mode to exception     

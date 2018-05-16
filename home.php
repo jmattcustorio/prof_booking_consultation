@@ -9,6 +9,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<title>CCE - PBC</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/home.css" />
+		
 	</header>
 		<center><body>
 			<div id="bodyWrap">
@@ -173,23 +174,18 @@
 									  <span class="signupclose">&times;</span>
 									  <h2>Create your Account</h2>
 									</div>
-									
-									<div class="signup-body">
-									  <button id="professor" class="btn_professor"><a href="signup.php">Professor</a>
-									  <?php
-										$_SESSION['usertype'] = "professor";
-									  ?>
-									  </button>
-									  <button id="student" class="btn_student"><a href="signup.php">Student</a>
-									  <?php
-										$_SESSION['usertype'] = "student";
-									  ?>
-									  </button>
-									</div>
+									<form method="get" action="signup.php">
+										<div class="signup-body">
+										  <input type = "submit" name="submit" class="btn_professor" value = "Professor" >
+										  <input type  ="submit" name="submit" class="btn_student" value = "Student">
+										</div>
+									</form>
 								  </div>
+								  
 								</div>
 
 								<script>
+									
 									var modal_signup = document.getElementById('signup_modal');
 									var btn_signup = document.getElementById("signup");
 									var span = document.getElementsByClassName("signupclose")[0];
