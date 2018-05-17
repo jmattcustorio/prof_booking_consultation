@@ -1,3 +1,6 @@
+<!--Version 1.1.0 -->
+
+
 <?php session_start();?>
 <!doctype html>
 
@@ -6,6 +9,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<title>CCE - PBC</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/home.css" />
+		
 	</header>
 		<center><body>
 			<div id="bodyWrap">
@@ -15,28 +19,29 @@
 				<div id="buttons">
 					<div id="title"> Professors' Booking Consultation </div>
 						<?php
-					if(isset($_SESSION['username'])){
+					if(isset($_SESSION['fname'])){
 						?>
-						<div id="welcome">Welcome <?php echo strtoupper($_SESSION['username'])?></div>
+						<div id="welcome">Welcome <?php echo strtoupper($_SESSION['fname'])?></div>
 						<?php
 					}
-					else{
-						?>
-						<div id="home"> &nbsp; </div>
-						<div id="dashboard"><a href=""> Select Subject </a></div>						
-						<?php
-					}
+					
 				?>
 				<?php
-					if(isset($_SESSION['username'])){
+					if(isset($_SESSION['fname'])){
+						if($_SESSION['usertype']=="Professor"){
 						?>
 						<div id="dboard"><a href="calendar.php"> Calendar </a></div>
-						<div id="dashboard"><a href=""> Select Subject </a></div>
 						<?php
+						}
+						else{
+						?>
+							<div id="dboard"><a href="student-calendar.php"> Calendar </a></div>
+						<?php
+						}
 					}
 				?>				
 				<?php
-					if(isset($_SESSION['username'])){
+					if(isset($_SESSION['fname'])){
 						?>
 						<div id="logout"><a href="logout.php">Log Out</a></div>
 						<?php
@@ -170,15 +175,18 @@
 									  <span class="signupclose">&times;</span>
 									  <h2>Create your Account</h2>
 									</div>
-									
-									<div class="signup-body">
-									  <button id="professor" class="btn_professor"><a href="professor.php">Professor</a></button>
-									  <button id="student" class="btn_student"><a href="student.php">Student</a></button>
-									</div>
+									<form method="get" action="signup.php">
+										<div class="signup-body">
+										  <input type = "submit" name="submit" class="btn_professor" value = "Professor" >
+										  <input type  ="submit" name="submit" class="btn_student" value = "Student">
+										</div>
+									</form>
 								  </div>
+								  
 								</div>
 
 								<script>
+									
 									var modal_signup = document.getElementById('signup_modal');
 									var btn_signup = document.getElementById("signup");
 									var span = document.getElementsByClassName("signupclose")[0];
@@ -301,63 +309,49 @@
 									  <div id="content"><h2> College of Computing in Education </h2></div>
 						<div id="mc1"> Login to your Account </div>
 						
-						<form action="home.php" method="post">
+						<form action="index.php" method="post">
 							<?php include ('authentication.php');
-								if ($valid != true){?>						
+								if ($valid != true){?>	
+									<h5><?php echo $usernameErr ?></h5>
 							<?php
 							}?>
 						<div id="mc2">ID Number: </div>
 						<div id="mc3"><input type="number" name="school_id" required></div>
 						
 						<div id="mc5">Password:</div>
-						<div id="mc6"><input type="password" id="password" name="password" required></div>
-							<script>
-								var toggled = false;
-								function show(){
-								if(!toggled){
-									toggled = true;
-									document.getElementById("password").setAttribute('type','text');
-									return;
-								}
-								if(toggled){
-									toggled = false;
-									document.getElementById("password").setAttribute('type','password');
-									return;
-								}
-								}
-							</script>
-						<div id="mc8"><input type = "checkbox" name = "usertype" value = "admin">Log in as Professor</div>
+						<div id="mc6"><input type="password" name="password" required></div>
+						<div id = "mc10"></div>
 						<div id="mc9"><button type="submit" name="login">Log in</button></div>
-						<div id="mc10">Not Yet a member? Sign up <a href="signup.php"><i>Here</i></a></div>
+						<div id = "mc10"></div>
 						</form>
-									</div>
-									
-									<div class="login-footer">
-									  <h3> &nbsp;</h3>
-									</div>
-								  </div>
-								</div>
+						</div>
+						
+						<div class="login-footer">
+						  <h3> &nbsp;</h3>
+						</div>
+					  </div>
+					</div>
 
-								<script>
-									var modal_login = document.getElementById('login_modal');
-									var btn_login = document.getElementById("login");
-									var span = document.getElementsByClassName("loginclose")[0];
-									btn_login.onclick = function() {
-										modal_login.style.display = "block";
-									}
-										span.onclick = function() {
-											modal_login.style.display = "none";
-										}
-									window.onclick = function(event) {
-										if (event.target == modal_login) {
-											modal_login.style.display = "none";
-										}
-									}
-								</script>	
+					<script>
+						var modal_login = document.getElementById('login_modal');
+						var btn_login = document.getElementById("login");
+						var span = document.getElementsByClassName("loginclose")[0];
+						btn_login.onclick = function() {
+							modal_login.style.display = "block";
+						}
+							span.onclick = function() {
+								modal_login.style.display = "none";
+							}
+						window.onclick = function(event) {
+							if (event.target == modal_login) {
+								modal_login.style.display = "none";
+							}
+						}
+					</script>	
 
-						<?php
-					}
-				?>
+					<?php
+				}
+			?>
 				
 			</div>
 			</div>

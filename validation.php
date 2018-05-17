@@ -142,8 +142,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				echo "Error: " . $e->getMessage(); 
 			} 
 			
-			echo '<script type="text/javascript">alert("You have successfully registered!");</script>';
-			echo "<script>setTimeout(\"location.href = 'home.php';\",1);</script>";  
+			if($_SESSION['usertype']=="Professor"){
+				echo '<script type="text/javascript">alert("You have successfully registered!");</script>';
+				echo "<script>setTimeout(\"location.href = 'dashboard-prof.php';\",1);</script>"; 
+			} 
+			else{
+				echo '<script type="text/javascript">alert("You have successfully registered!");</script>';
+				echo "<script>setTimeout(\"location.href = 'student-calendar.php';\",1);</script>"; 
+			}
 			
 		}  
 		catch(PDOException $e) {   

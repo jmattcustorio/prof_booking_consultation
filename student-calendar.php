@@ -87,7 +87,7 @@
 								<li class="dropdown-content">
 									<ul class="dropdown-menu dropdown-navbar navbar-pink">
 										<li>
-											<a href="#">
+											<a href="">
 												<div class="clearfix">
 													<span class="pull-left">
 														<i class="btn btn-xs no-hover btn-pink fa fa-save"></i>
@@ -102,7 +102,7 @@
 								</li>
 
 								<li class="dropdown-footer">
-									<a href="#">
+									<a href="">
 										See all notifications
 										<i class="ace-icon fa fa-arrow-right"></i>
 									</a>
@@ -123,17 +123,12 @@
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 
-								<li>
-									<a href="profile.php">
-										<i class="ace-icon fa fa-user"></i>
-										Profile
-									</a>
-								</li>
+				
 
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a href="logout.php">
 										<i class="ace-icon fa fa-power-off"></i>
 										Logout
 									</a>
@@ -181,7 +176,7 @@
 
 					<!--  -->
 					<li class="">
-						<a href="#" class="dropdown-toggle">
+						<a href="" class="dropdown-toggle">
 							
 							<span class="menu-text"> E.L Pajota </span>
 
@@ -224,7 +219,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="index.php">Home</a>
 							</li>
 							<li class="active">Calendar</li>
 						</ul><!-- /.breadcrumb -->
@@ -246,7 +241,7 @@
 								Full Calendar
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
-									Events
+									Consultation
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -279,7 +274,7 @@
 											<div class="widget-header">
 												<h4>Group reserved</h4>
 											</div>
-											<div class="col-xs-12 col-sm-10 widget-container-col" id="widget-container-col-2" style="margin-top: 10px;">
+											<div class="col-xs-12 col-sm-12 widget-container-col" id="widget-container-col-2" style="margin-top: 10px;">
 												<div class="widget-box widget-color-blue" id="widget-box-2">
 													<div class="widget-body">
 														<div class="widget-main no-padding">
@@ -337,15 +332,15 @@
 
 						&nbsp; &nbsp;
 						<span class="action-buttons">
-							<a href="#">
+							<a href="https://twitter.com">
 								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
 							</a>
 
-							<a href="#">
+							<a href="https://facebook.com">
 								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
 							</a>
 
-							<a href="#">
+							<a href="http://feeds2.feedburner.com/SmallBusinessTrends">
 								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
 							</a>
 						</span>
@@ -440,7 +435,7 @@
 		events: [
 		 
 		  {
-			title: 'Some Event',
+			title: 'Teambangan',
 			start: new Date(y, m, d-3, 16, 0),
 			allDay: false,
 			className: 'label-info'
@@ -492,7 +487,7 @@
 		select: function(start, end, allDay) {
 
 			// DIRIA ANG CALENDAR MODAL SCRIPT
-			bootbox.prompt("New Event Title:", function(title) {
+			bootbox.prompt("Group Name:", function(title) {
 				if (title !== null) {
 					calendar.fullCalendar('renderEvent',
 						{
@@ -520,13 +515,13 @@
 				 <div class="modal-body">\
 				   <button type="button" class="close" data-dismiss="modal" style="margin-top:-10px;">&times;</button>\
 				   <form class="no-margin">\
-					  <label>Change event name &nbsp;</label>\
+					  <label>Change group name &nbsp;</label>\
 					  <input class="middle" autocomplete="off" type="text" value="' + calEvent.title + '" />\
 					 <button type="submit" class="btn btn-sm btn-success"><i class="ace-icon fa fa-check"></i> Save</button>\
 				   </form>\
 				 </div>\
 				 <div class="modal-footer">\
-					<button type="button" class="btn btn-sm btn-danger" data-action="delete"><i class="ace-icon fa fa-trash-o"></i> Delete Event</button>\
+					<button type="button" class="btn btn-sm btn-danger" data-action="delete"><i class="ace-icon fa fa-trash-o"></i> Delete Group</button>\
 					<button type="button" class="btn btn-sm" data-dismiss="modal"><i class="ace-icon fa fa-times"></i> Cancel</button>\
 				 </div>\
 			  </div>\

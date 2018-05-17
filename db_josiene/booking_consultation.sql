@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2018 at 08:54 AM
+-- Generation Time: May 17, 2018 at 11:56 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -19,30 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `booking_consultation`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_professor`
---
-
-CREATE TABLE `tbl_professor` (
-  `prof_userid` int(11) NOT NULL,
-  `prof_fname` varchar(50) NOT NULL,
-  `prof_lname` varchar(50) NOT NULL,
-  `prof_username` varchar(50) NOT NULL,
-  `prof_email` varchar(50) NOT NULL,
-  `prof_id` int(11) NOT NULL,
-  `prof_password` varchar(50) NOT NULL,
-  `prof_contactno` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_professor`
---
-
-INSERT INTO `tbl_professor` (`prof_userid`, `prof_fname`, `prof_lname`, `prof_username`, `prof_email`, `prof_id`, `prof_password`, `prof_contactno`) VALUES
-(1, 'Charisse', 'Barbosa', 'mam_cha', 'charisbarbosa_um@gmail.com', 123456, 'admin', '09991233456');
 
 -- --------------------------------------------------------
 
@@ -69,23 +45,6 @@ INSERT INTO `tbl_reservation` (`reservation_id`, `title`, `start_event`, `end_ev
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_student`
---
-
-CREATE TABLE `tbl_student` (
-  `stud_userid` int(11) NOT NULL,
-  `stud_fname` varchar(50) NOT NULL,
-  `stud_lname` varchar(50) NOT NULL,
-  `stud_username` varchar(50) NOT NULL,
-  `stud_email` varchar(50) NOT NULL,
-  `stud_password` varchar(50) NOT NULL,
-  `stud_id` int(11) NOT NULL,
-  `stud_contactno` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_subject`
 --
 
@@ -96,15 +55,34 @@ CREATE TABLE `tbl_subject` (
   `prof_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `userid` int(50) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `school_id` int(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `contactno` varchar(50) NOT NULL,
+  `usertype` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`userid`, `fname`, `lname`, `school_id`, `email`, `password`, `contactno`, `usertype`) VALUES
+(1, 'Charisse', 'Barbosa', 123456, '', 'f6fdffe48c908deb0f4c3bd36c032e72', '09998765432', 'Professor'),
+(2, 'Josiene', 'Sato', 347300, '', 'f6fdffe48c908deb0f4c3bd36c032e72', '09954536909', 'Student');
+
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `tbl_professor`
---
-ALTER TABLE `tbl_professor`
-  ADD PRIMARY KEY (`prof_userid`);
 
 --
 -- Indexes for table `tbl_reservation`
@@ -113,41 +91,36 @@ ALTER TABLE `tbl_reservation`
   ADD PRIMARY KEY (`reservation_id`);
 
 --
--- Indexes for table `tbl_student`
---
-ALTER TABLE `tbl_student`
-  ADD PRIMARY KEY (`stud_userid`);
-
---
 -- Indexes for table `tbl_subject`
 --
 ALTER TABLE `tbl_subject`
   ADD PRIMARY KEY (`subject_id`);
 
 --
+-- Indexes for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`userid`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
---
--- AUTO_INCREMENT for table `tbl_professor`
---
-ALTER TABLE `tbl_professor`
-  MODIFY `prof_userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_reservation`
 --
 ALTER TABLE `tbl_reservation`
   MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT for table `tbl_student`
---
-ALTER TABLE `tbl_student`
-  MODIFY `stud_userid` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `tbl_subject`
 --
 ALTER TABLE `tbl_subject`
   MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `userid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -165,11 +165,12 @@
 									<i class="ace-icon fa fa-exclamation-triangle"></i>
 									2 Notifications
 								</li>
-
+								
+								<?php if ($_SESSION['usertype']=="Student"){ ?>
 								<li class="dropdown-content">
 									<ul class="dropdown-menu dropdown-navbar navbar-pink">
 										<li>
-											<a href="#">
+											<a href="">
 												<div class="clearfix">
 													<span class="pull-left">
 														<i class="btn btn-xs no-hover btn-pink fa fa-save"></i>
@@ -182,9 +183,10 @@
 
 									</ul>
 								</li>
-
+								<?php } ?>
+								
 								<li class="dropdown-footer">
-									<a href="#">
+									<a href="">
 										See all notifications
 										<i class="ace-icon fa fa-arrow-right"></i>
 									</a>
@@ -205,17 +207,12 @@
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 
-								<li>
-									<a href="profile.php">
-										<i class="ace-icon fa fa-user"></i>
-										Profile
-									</a>
-								</li>
+								
 
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a href="logout.php">
 										<i class="ace-icon fa fa-power-off"></i>
 										Logout
 									</a>
@@ -292,7 +289,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="index.php">Home</a>
 							</li>
 							<li class="active">Calendar</li>
 						</ul><!-- /.breadcrumb -->
@@ -346,15 +343,15 @@
 
 						&nbsp; &nbsp;
 						<span class="action-buttons">
-							<a href="#">
+							<a href="https://twitter.com">
 								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
 							</a>
 
-							<a href="#">
+							<a href="https://facebook.com">
 								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
 							</a>
 
-							<a href="#">
+							<a href="http://feeds2.feedburner.com/SmallBusinessTrends">
 								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
 							</a>
 						</span>

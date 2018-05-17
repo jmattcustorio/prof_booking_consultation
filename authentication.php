@@ -1,102 +1,64 @@
 <?php
 require_once('dbconn.php');
-$schoolID = "";
+$school_id = "";
 $password = "";
 $usertype = "";
 $schoolIDErr = $passwordErr = "";
 $valid = true;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//check School ID
-   if (empty($_POST['schoolID'])) {
-	$valid = false; 
-  } 
-  else {		
-	$schoolID = test_input(strtolower($_POST['schoolID'])); 
- }
-
-//check password
-  if (empty($_POST['password'])) {
-	$valid = false; 
- }
- else{
-	$password = test_input($_POST['password']); 
+	$password = trim($_POST['password']);
+	$password = stripslashes($password);
+	$password = htmlspecialchars($password);
+	
+	$school_id = trim($_POST['school_id']);
+	$school_id = stripslashes($school_id);
+	$school_id = htmlspecialchars($school_id);
+	
 	$password = md5($password);
- }
- //check if user login as admin
+
+	
  if (isset($_POST['usertype'])) {
 	 $usertype = $_POST['usertype'];
  }
  else{
-	 $usertype = "user";
+	 $usertype = "Student";
  }
  if ($valid == true) { 	  
 	try {   
-		$sql = "SELECT * FROM tbl_student WHERE school_id = :school_id";       
+		$sql = "SELECT * FROM tbl_user WHERE school_id = :school_id";       
 		$stmt = $conn->prepare($sql);      
-		$stmt->bindParam(':schoolID', $schoolID, PDO::PARAM_STR);
+		$stmt->bindParam(':school_id', $school_id, PDO::PARAM_STR);
 		$stmt->execute();   
 		$total = $stmt->rowCount(); 								
 		if($total>0){
-			foreach ($stmt->fetchAll() as $row)   {  
-				if($row['status']!="Active"){
-					echo '<script type="text/javascript">alert("Account not found!");</script>';
-					echo "<script>setTimeout(\"location.href = 'login.php';\",1);</script>";
-				}
-				else if($row['password']==$password){
-					if($row['usertype']=="admin" && $usertype == "user"){
-						$_SESSION['usertype'] = $row['usertype'];
-						$_SESSION['school_id'] = $row['school_id'];
-						if(!isset($_SESSION['cart'])){
-							echo '<script type="text/javascript">alert("You have successfully logged in!");</script>';
-							echo "<script>setTimeout(\"location.href = 'home.php';\",1);</script>"; 
-						}
-						else{
-							echo '<script type="text/javascript">alert("You have successfully logged in!\n\nYou may now complete your order.");</script>';
-							echo "<script>setTimeout(\"location.href = 'checkout.php';\",1);</script>";  
-						}
-					} 
-					elseif ($row['usertype']=="admin" && $usertype == "admin"){
-						$_SESSION['usertype'] = $row['usertype'];
-						$_SESSION['school_id'] = $row['school_id'];
-						$_SESSION['access'] = "yes";
-						echo '<script type="text/javascript">alert("You have successfully logged in as admin!");</script>';
-						echo "<script>setTimeout(\"location.href = 'admin.php';\",1);</script>";
-					} 
-					elseif($row['usertype']==$usertype){
-						$_SESSION['usertype'] = $row['usertype'];
-						$_SESSION['school_id'] = strtoupper($row['school_id']);
-						if(!isset($_SESSION['cart'])){
-							echo '<script type="text/javascript">alert("You have successfully logged in!");</script>';
-							echo "<script>setTimeout(\"location.href = 'home.php';\",1);</script>"; 
-						}
-						
+			foreach ($stmt->fetchAll() as $row){
+				if ($row['password'] == $password){
+					$_SESSION['userid'] = $row['userid'];
+					$_SESSION['fname'] = $row['fname'];
+					if ($usertype == "Professor"){
+						echo '<script type="text/javascript">alert("You have successfully logged in!");</script>';
+						echo "<script>setTimeout(\"location.href = 'dashboard-prof.php';\",1);</script>";  
 					}
 					else{
-						$school_idErr = "You are not registered as admin!";
-						$valid = false;
+						echo '<script type="text/javascript">alert("You have successfully logged in!");</script>';
+						echo "<script>setTimeout(\"location.href = 'student-calendar.php';\",1);</script>";  
 					}
 				}
 				else{
-					$school_idErr = "School ID and password did not match!";
+					$usernameErr = "Invalid ID and/or password!";
 					$valid = false;
 				}
 			}
 		}
-		
-	}  
+	}
 	catch(PDOException $e) {   
 		echo "Error: " . $e->getMessage(); 
 	} 
+	
 	$conn = null; 
+ }
 }
-}
- function test_input($data) {
-	  $data = trim($data);
-	  $data = stripslashes($data);
-	  $data = htmlspecialchars($data);
-	  return $data;
-	}
-
+ 
 ?>
 

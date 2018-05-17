@@ -81,17 +81,12 @@
 							</a>
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="profile.html">
-										<i class="ace-icon fa fa-user"></i>
-										Profile
-									</a>
-								</li>
+								
 
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a href="logout.php">
 										<i class="ace-icon fa fa-power-off"></i>
 										Logout
 									</a>
@@ -195,7 +190,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="index.php">Home</a>
 							</li>
 							<li class="active">Dashboard</li>
 						</ul><!-- /.breadcrumb -->
@@ -295,7 +290,19 @@
 						</span>
 
 						&nbsp; &nbsp;
+						<span class="action-buttons">
+							<a href="https://twitter.com">
+								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+							</a>
 
+							<a href="https://facebook.com">
+								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+							</a>
+
+							<a href="http://feeds2.feedburner.com/SmallBusinessTrends">
+								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+							</a>
+						</span>
 					</div>
 				</div>
 			</div>
